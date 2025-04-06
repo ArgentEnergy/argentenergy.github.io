@@ -47,10 +47,6 @@ h1 {
 
 /* Grouping content
    ========================================================================== */
-/**
- * Add the correct display in IE 9-.
- * 1. Add the correct display in IE.
- */
 figcaption,
 figure,
 main {
@@ -58,11 +54,13 @@ main {
   display: block;
 }
 
-/**
- * Add the correct margin in IE 8.
- */
 figure {
-  margin: 1em 40px;
+  text-align: center;
+  margin: 1.5em auto;
+}
+
+figcaption {
+   font-size: 0.9em;
 }
 
 /**
