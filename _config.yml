@@ -2,6 +2,7 @@ title: Blog - argentenergy
 description: Vulnerabilities discovered and exploited during my career.
 url: "https://argentenergy.github.io/"
 baseurl: ""
+permalink: "/:year/:month/:day/:title/"
 
 # Theme
 theme: jekyll-theme-cayman
