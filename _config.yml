@@ -4,7 +4,7 @@ url: "https://argentenergy.github.io/"
 baseurl: ""
 
 # Theme
-theme: jekyll-theme-slate
+theme: jekyll-theme-cayman
 
 # Author info
 author:
