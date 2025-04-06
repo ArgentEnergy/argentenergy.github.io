@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Blind Remote Code Execution through YAML Deserialization"
-date:   2021-06-09 12:00:00
-categories: node
+date:   2021-06-09
 ---
 
 During an application security assessment of a Ruby on Rails project, I identified upload functionality that allowed users to submit text, CSV, and YAML files. The YAML option stood out due to its potential as a deserialization vulnerability.  
