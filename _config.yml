@@ -1,0 +1,17 @@
+title: Blog - argentenergy
+description: Vulnerabilities discovered and exploited during my career.
+url: "https://argentenergy.github.io/"
+baseurl: ""
+
+# Theme
+theme: jekyll-theme-slate
+
+# Author info
+author:
+  name: Colin McQueen
+  email: null
+
+# Social links (optional)
+social_links:
+  bluesky: https://bsky.app/profile/argentenergy.bsky.social
+  github: https://github.com/argentenergy
