@@ -10,11 +10,7 @@ social-linkedin: colinamcqueen
 
 author: argentenergy
 author-img: colin.avif
-about-author: |
-  With 12 years of IT experience – six as a developer and six in application security – I have successfully discovered and reported numerous vulnerabilities for customers and bug bounty programs.
-
-  
-  Author of the following CVEs: CVE-2021-36156 and CVE-2021-36157
+about-author: "With 12 years of IT experience – six as a developer and six in application security – I have successfully discovered and reported numerous vulnerabilities for customers and bug bounty programs.\n\nAuthor of the following CVEs: CVE-2021-36156 and CVE-2021-36157"
 
 plugins:
   - jekyll-paginate
