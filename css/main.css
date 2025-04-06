@@ -1,0 +1,14 @@
+/* Center all images and figures */
+figure {
+  text-align: center;
+  margin: 1.5em auto;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  font-size: 0.9em;
+}
