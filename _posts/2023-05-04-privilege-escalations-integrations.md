@@ -14,7 +14,7 @@ It acts as a wrapper for Tableau, with custom code integrating Amazon Cognito an
 ## Amazon Cognito Misconfigurations
 Amazon Cognito allows users to self-register, confirm their account, and retrieve tokens (access, ID, and refresh). In this application, however, self-registration was not intended, as the system was designed for administrators to provision accounts.
 
-An unauthenticated user can exploit a misconfiguration by retrieving the Cognito client ID from the /static/js/main.js file. With Cognito self-registration enabled, users can bypass the Okta integration, create accounts, and log in. Correct profile and role values are necessary for successful access to the application, and these values were exposed in a public development environment.
+An unauthenticated user can exploit a misconfiguration by retrieving the Cognito client ID from the ```/static/js/main.js``` file. With Cognito self-registration enabled, users can bypass the Okta integration, create accounts, and log in. Correct profile and role values are necessary for successful access to the application, and these values were exposed in a public development environment.
 
 Unauthenticated users can enumerate email addresses by accessing the public development environment, and authenticated users can easily format the necessary values. By self-registering, users can update their attributes and forge JWTs to impersonate other users.
 
@@ -74,3 +74,29 @@ Unauthenticated users can self-register with Cognito and then use another user's
 </figure> 
 
 ## Privilege Escalation to Server Admin in Tableau Development Environment
+The ```/static/js/main.js``` file exposed Cognito client IDs and Tableau URLs for all environments (dev, QA, UAT, and production). The dev environment did not require a JWT to retrieve a Tableau ticket. An unauthenticated user could use the default Tableau admin username to obtain the ticket and gain Tableau server admin privileges. Additionally, the dev environment was publicly accessible.
+
+As noted earlier, an attacker could retrieve profile and role values to escalate privileges in other environments.
+
+<figure>
+  <img src="/assets/img/2023/dev-env-access-1.png">
+  <figcaption>Figure 11 – Dev environment details in JS file</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/dev-env-access-2.png">
+  <figcaption>Figure 12 – Retrieved default Tableau admin Tableau ticket</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/dev-env-access-3.png">
+  <figcaption>Figure 13 – Exchanged ticket for Tableau session</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/dev-env-access-4.png">
+  <figcaption>Figure 14 – Confirmation an unauthenticated user can become a Tableau server admin</figcaption>
+</figure> 
+
+## Privilege Escalation to Server Admin in Tableau using Okta
+
