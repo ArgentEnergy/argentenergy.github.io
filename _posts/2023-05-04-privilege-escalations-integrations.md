@@ -99,4 +99,35 @@ As noted earlier, an attacker could retrieve profile and role values to escalate
 </figure> 
 
 ## Privilege Escalation to Server Admin in Tableau using Okta
+While investigating the Okta integration, I attempted to access the Okta console at https://idp-redacted.com/login/default to identify any misconfigurations. Not only was I able to access the console, but I also discovered custom fields in Okta.
 
+Through the Okta APIs, I found a custom field called tableauusername. I updated my user's tableauusername to "admin" to attempt to gain access as the default Tableau admin. After logging out of Okta and logging into the application, I had full access to all Tableau dashboards in the system.
+
+<figure>
+  <img src="/assets/img/2023/okta-tableau-priv-escal-1.png">
+  <figcaption>Figure 15 – Access to Okta console</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/okta-tableau-priv-escal-2.png">
+  <figcaption>Figure 16 – Found custom fields under profile in the Okta API</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/okta-tableau-priv-escal-3.png">
+  <figcaption>Figure 17 – Updated the custom tableauusername to admin</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/okta-tableau-priv-escal-4.png">
+  <figcaption>Figure 18 – Got Tableau server admin viewing all dashboards</figcaption>
+</figure> 
+
+## Remediation
+For Amazon Cognito, it is recommended to disable self-registration and update user attributes to prevent authenticated users from forging JWTs as another user.
+
+In the custom code for the Amazon API Gateway, the JWT should be used to confirm the user's identity for Tableau trusted authentication, instead of relying on the email query parameter. This fix depends on disabling Cognito's update user attributes call to prevent JWT forging.
+
+For the development environment, it is advised to disable public access at the network level, remove unnecessary environment details from the JavaScript file, and use a JWT for Tableau trusted authentication, as in other environments.
+
+Regarding the Okta integration, the Okta console should not be publicly accessible, and validation should be implemented to prevent users from updating specific custom fields.
