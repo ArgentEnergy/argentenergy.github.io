@@ -49,4 +49,28 @@ Unauthenticated users can enumerate email addresses by accessing the public deve
 </figure>  
 
 ## Tableau Trusted Auth Privilege Escalation
+The application integrates Tableau using Tableau's trusted authentication. Custom code in the Amazon API Gateway only checked for a valid JWT but didn't verify the user's identity. The email address in the URL was used to confirm the identity and retrieve a valid Tableau ticket.
 
+Unauthenticated users can self-register with Cognito and then use another user's email address (such as a Tableau server admin) to retrieve a valid Tableau ticket, leading to privilege escalation in Tableau.
+
+<figure>
+  <img src="/assets/img/2023/tableau-priv-escalation-1.png">
+  <figcaption>Figure 7 – Retrieved another user's Tableau ticket</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/tableau-priv-escalation-2.png">
+  <figcaption>Figure 8 – Exchanged Tableau ticket for Tableau session</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/tableau-priv-escalation-3.png">
+  <figcaption>Figure 9 – Confirmation escalated Tableau privileges to Site Administrator Explorer</figcaption>
+</figure> 
+
+<figure>
+  <img src="/assets/img/2023/tableau-priv-escalation-4.png">
+  <figcaption>Figure 10 – List all site users to find Tableau Server Admin to escalate privileges again</figcaption>
+</figure> 
+
+## Privilege Escalation to Server Admin in Tableau Development Environment
