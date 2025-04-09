@@ -1316,11 +1316,12 @@ a.newer-posts:hover {
   background-repeat: no-repeat;
   vertical-align: middle;
   margin-bottom: 0.3em;
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .bugcrowd-icon:hover {
-   color: #333030;
    -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
+   filter: brightness(0) saturate(100%) invert(33%) sepia(74%) saturate(3582%) hue-rotate(118deg) brightness(103%) contrast(106%);
 }
