@@ -16,5 +16,5 @@ about-author: "With 12 years of IT experience – six as a developer and six in 
 plugins:
   - jekyll-paginate
 
-paginate: 8
+paginate: 6
 paginate_path: "/page/:num"
