@@ -21,9 +21,9 @@ SELECT reflect('java.lang.System', 'getProperties')
 While the environment variables and system properties revealed nothing sensitive, the system properties did expose the Spark version, which later helped me achieve remote code execution.
 
 ## Path to Exploitation
-While reviewing the Spark JavaDocs, I found a class called ```org.apache.spark.TestUtils``` with a static method, ```testCommandAvailable()```.
+While reviewing the Spark JavaDocs, I found a class called **org.apache.spark.TestUtils** with a static method, **testCommandAvailable()**.
 
-Upon reviewing the code on GitHub, I discovered that ```Process(command).run()``` allowed system commands to be executed.
+Upon reviewing the code on GitHub, I discovered that **Process(command).run()** allowed system commands to be executed.
 
 I crafted a Spark SQL payload using this method to execute system commands and was able to disclose the Kubernetes API token and AWS keys with excessive permissions using the following queries:
 ```sql
