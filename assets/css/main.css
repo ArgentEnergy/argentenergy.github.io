@@ -1488,9 +1488,5 @@ a.newer-posts:hover {
   background-repeat: no-repeat;
   text-align: center;
   line-height: 1; /* Vertically align the icon */
-}
-
-/* Optionally, add some padding or margin to ensure it looks balanced */
-.bugcrowd-icon {
-  margin-right: 5px; /* Space between icon and text (if you have any) */
+  margin-right: 5px;
 }
