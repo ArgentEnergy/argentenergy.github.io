@@ -1485,4 +1485,6 @@ a.newer-posts:hover {
   height: 1em;
   background-image: url('/assets/img/bugcrowd.svg');
   background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-bottom: 0.3em;
 }
