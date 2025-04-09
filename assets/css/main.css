@@ -189,22 +189,6 @@ sup {
 /* Embedded content
    ========================================================================== */
 /**
- * Add the correct display in IE 9-.
- */
-audio,
-video {
-  display: inline-block;
-}
-
-/**
- * Add the correct display in iOS 4-7.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
  * Remove the border on images inside links in IE 10-.
  */
 img {
@@ -439,6 +423,7 @@ template {
   -webkit-border-radius: 3px;
           border-radius: 3px;
   margin: 0;
+  font-size: smaller;
 }
 
 .highlighter-rouge {
@@ -1041,8 +1026,8 @@ footer .copyright {
 }
 
 .post {
-  width: 100%;
-  max-width: 100%;
+  width: 40%;
+  margin-right: 1.5rem;
   margin-bottom: 1.5rem;
   display: -webkit-box;
   display: -webkit-flex;
