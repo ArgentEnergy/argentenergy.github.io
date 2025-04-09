@@ -1483,7 +1483,7 @@ a.newer-posts:hover {
   display: inline-block;
   width: 1em; /* Match the width of FontAwesome icons */
   height: 1em; /* Match the height of FontAwesome icons */
-  background-image: url('/assets/img/bugcrowd.svg'); /* Path to your Bugcrowd icon */
+  background-image: url('./assets/img/bugcrowd.svg'); /* Path to your Bugcrowd icon */
   background-size: contain; /* Make sure the SVG is sized correctly */
   background-repeat: no-repeat;
   text-align: center;
