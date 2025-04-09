@@ -1481,12 +1481,8 @@ a.newer-posts:hover {
 /* Make the custom Bugcrowd icon match FontAwesome icon sizes */
 .bugcrowd-icon {
   display: inline-block;
-  width: 1em; /* Match the width of FontAwesome icons */
-  height: 1em; /* Match the height of FontAwesome icons */
-  background-image: url('/assets/img/bugcrowd.svg'); /* Path to your Bugcrowd icon */
-  background-size: contain; /* Make sure the SVG is sized correctly */
+  width: 1em;
+  height: 1em;
+  background-image: url('/assets/img/bugcrowd.svg');
   background-repeat: no-repeat;
-  text-align: center;
-  line-height: 1; /* Vertically align the icon */
-  margin-right: 5px;
 }
