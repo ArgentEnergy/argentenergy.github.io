@@ -60,7 +60,7 @@ figure {
 }
 
 figcaption {
-   font-size: 0.9em;
+   font-size: small;
 }
 
 /**
@@ -898,7 +898,7 @@ pre code {
   margin: 0 0 10px;
   position: relative;
   padding-bottom: 15px;
-  font-size: 16px;
+  font-size: small;
   text-transform: uppercase;
   color: #333030;
   font-weight: 700;
@@ -921,7 +921,7 @@ pre code {
 }
 
 .about p {
-  font-size: 16px;
+  font-size: smaller;
   margin: 0 0 10px;
 }
 
@@ -1020,7 +1020,7 @@ pre code {
 }
 
 footer .copyright {
-  font-size: 14px;
+  font-size: small;
   text-align: center;
   margin: 0;
 }
