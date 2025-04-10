@@ -6,7 +6,7 @@ date:   2021-06-09
 
 During an application security assessment of a Ruby on Rails project, I identified upload functionality that allowed users to submit text, CSV, and YAML files. The YAML option stood out due to its potential as a deserialization vulnerability.  
 
-After several uploads, I found that the process validated file contents before uploading them to Azure blob storage. YAML files starting with **---!ruby/object:BadValue** triggered a fatal status, while other invalid YAML files returned an error status. This fatal status was the only indicator that the upload process might be vulnerable.
+After several uploads, I found that the process validated file contents before uploading them to Azure blob storage. YAML files starting with **&#45;&#45;&#45;!ruby/object:BadValue** triggered a fatal status, while other invalid YAML files returned an error status. This fatal status was the only indicator that the upload process might be vulnerable.
 
 <figure>
   <img src="/assets/img/2021/blind-rce-status-indicator.png">
