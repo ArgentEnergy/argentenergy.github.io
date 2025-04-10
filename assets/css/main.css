@@ -756,7 +756,7 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #515151;
   background-color: #fbfbfb;
   margin: 0;
@@ -894,7 +894,7 @@ pre code {
 }
 
 .about .author-name {
-  font-family: 'PT Serif', serif;
+  font-family: 'Inter', serif;
   margin: 0 0 10px;
   position: relative;
   padding-bottom: 15px;
@@ -1087,7 +1087,7 @@ footer .copyright {
 }
 
 .post .post-content .post-title a {
-  font-family: 'PT Serif', serif;
+  font-family: 'Inter', serif;
   text-decoration: none;
   color: #263959;
 }
