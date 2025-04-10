@@ -813,6 +813,7 @@ pre code {
 
 .post, .article-page {
   background-color: #fff;
+  width: 100vw;
 }
 
 ::-moz-selection {
