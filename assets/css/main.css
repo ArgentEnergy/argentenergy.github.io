@@ -129,6 +129,8 @@ strong {
 b,
 strong {
   font-weight: bolder;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /**
