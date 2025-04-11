@@ -432,6 +432,8 @@ template {
   font-weight: 400;
   -webkit-border-radius: 3px;
           border-radius: 3px;
+  max-width: 75vw;
+  width: fit-content;
 }
 
 .highlight .hll {
