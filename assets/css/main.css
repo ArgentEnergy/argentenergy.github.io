@@ -923,9 +923,8 @@ pre code {
 }
 
 .container {
-   display: flex;
-   justify-content: center;
-   margin-top: 0.5rem;
+   position: relative;
+   margin-left: 14rem;
 }
 
 .contact .contact-title {
