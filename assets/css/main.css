@@ -922,6 +922,12 @@ pre code {
           align-items: stretch;
 }
 
+.container {
+   display: flex;
+   justify-content: center;
+   margin-top: 0.5rem;
+}
+
 .contact .contact-title {
   position: relative;
   color: #333030;
