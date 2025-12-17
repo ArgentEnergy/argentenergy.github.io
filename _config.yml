@@ -1,6 +1,6 @@
-title: "Blog Title"
-author: "Blog Author"
-description: "My blog"
+title: "Blogs"
+author: "Colin McQueen"
+description: "Vulnerabilities discovered and exploited during my career."
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
