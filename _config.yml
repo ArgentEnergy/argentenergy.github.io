@@ -21,7 +21,7 @@ navigation:                     # accepts {file, title, url, icon, sidebaricon}
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/colinamcqueen"}
   - {title: GitHub, icon: github, url: "https://github.com/ArgentEnergy"}
-  - {title: Bugcrowd, file: "/assets/bugcrowd.svg", url: "https://bugcrowd.com/h/argentenergy"}
+  - {title: Bugcrowd, icon: bug, url: "https://bugcrowd.com/h/argentenergy"}
 
 comments:
 #  disqus_shortname: ""         # see https://disqus.com
