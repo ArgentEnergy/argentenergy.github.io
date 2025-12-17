@@ -14,18 +14,7 @@ The vulnerability was an IDOR that allowed me to create a second profile on a us
 
 The user schema for the application is below:
 ```json
-{
-    "uid": "",
-    "claims": {
-        "paid": true,
-        "moderator": true
-    },
-    "email": "original@domain.com",
-    "profile": {
-        "email": "original+1@domain.com",
-        "registration": ""
-    }
-}
+{"uid":"","claims":{"paid":true,"moderator":true},"email":"original@domain.com","profile":{"email":"original+1@domain.com","registration":""}}
 ```
 
 The login process relies on the user's email and the registration number attached to the user profile.
