@@ -120,7 +120,9 @@ Success! I gained a reverse shell and ran printenv, which revealed sensitive inf
 </figure> 
 
 The server was not an Azure function, but a Kubernetes pod, likely running on Azure Kubernetes. Using the Keycloak admin credentials, I logged into Keycloak's master realm as the admin user through the following URL:  
-**https://redacted.com/auth/realms/master/protocol/openid-connect/auth?client_id=account-console&redirect_uri=https%3A%2F%2Fredacted.com%2Fauth%2Frealms%2Fmaster%2Faccount%2F&state=:stateUUID&response_mode=fragment&response_type=code&scope=openid&nonce=:nonceUUID&code_challenge=:challengeValue&code_challenge_method=S256**
+```
+https://redacted.com/auth/realms/master/protocol/openid-connect/auth?client_id=account-console&redirect_uri=https%3A%2F%2Fredacted.com%2Fauth%2Frealms%2Fmaster%2Faccount%2F&state=:stateUUID&response_mode=fragment&response_type=code&scope=openid&nonce=:nonceUUID&code_challenge=:challengeValue&code_challenge_method=S256
+```
 
 The state UUID, nonce UUID, and code challenge values were obtained from the web application's realm.
 
