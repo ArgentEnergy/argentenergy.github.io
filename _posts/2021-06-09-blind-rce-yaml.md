@@ -9,7 +9,7 @@ During an application security assessment of a Ruby on Rails project, I identifi
 After several uploads, I found that the process validated file contents before uploading them to Azure blob storage. YAML files starting with **&#45;&#45;&#45;!ruby/object:BadValue** triggered a fatal status, while other invalid YAML files returned an error status. This fatal status was the only indicator that the upload process might be vulnerable.
 
 <figure>
-  <img src="/assets/img/2021/blind-rce-status-indicator.png">
+  <img src="/assets/images/2021/blind-rce-status-indicator.png">
   <figcaption>Figure 1 – Fatal status on poc2.yml</figcaption>
 </figure>  
 
@@ -43,12 +43,12 @@ After several attempts, I decided to try the sleep command for 10 minutes with t
 Uploading the YAML file caused the status icon to display a loading animation for 10 minutes, indicating that the sleep command executed successfully.
 
 <figure>
-  <img src="/assets/img/2021/yaml-deserial-rce-sleep-1.png">
+  <img src="/assets/images/2021/yaml-deserial-rce-sleep-1.png">
   <figcaption>Figure 2 – Start of the upload</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/img/2021/yaml-deserial-rce-sleep-2.png">
+  <img src="/assets/images/2021/yaml-deserial-rce-sleep-2.png">
   <figcaption>Figure 3 – Nine minutes after the file was uploaded</figcaption>
 </figure> 
 
@@ -82,7 +82,7 @@ After further consideration, I tried the bash -c command, echoing to **/dev/tcp/
 {% endhighlight %}
 
 <figure>
-  <img src="/assets/img/2021/yaml-rce.png">
+  <img src="/assets/images/2021/yaml-rce.png">
   <figcaption>Figure 4 – Exfiltrated user and server hostname through DNS lookup</figcaption>
 </figure> 
 
@@ -115,7 +115,7 @@ I then decided to attempt a reverse shell on port 443, as it’s less likely to 
 Success! I gained a reverse shell and ran printenv, which revealed sensitive information, including Keycloak admin credentials, Redis, and Azure DB details.
 
 <figure>
-  <img src="/assets/img/2021/reverse-shell-env-vars.png">
+  <img src="/assets/images/2021/reverse-shell-env-vars.png">
   <figcaption>Figure 5 – Listed server environment variables</figcaption>
 </figure> 
 
