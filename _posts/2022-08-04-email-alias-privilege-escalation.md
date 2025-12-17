@@ -13,7 +13,7 @@ The application allows users to watch event sessions, engage in discussions, and
 The vulnerability was an IDOR that allowed me to create a second profile on a user account and log in with a new registration number (password), effectively giving the account two passwords—the victim's and one set by the attacker.
 
 The user schema for the application is below:
-{% highlight json %}
+```json
 {
     "uid": "",
     "claims": {
@@ -26,7 +26,7 @@ The user schema for the application is below:
         "registration": ""
     }
 }
-{% endhighlight %}
+```
 
 The login process relies on the user's email and the registration number attached to the user profile.
 
