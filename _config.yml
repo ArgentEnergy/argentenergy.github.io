@@ -8,12 +8,10 @@ date_format: "%B %d, %Y"
 
 # Layout
 
-show_excerpts: true             # show article excerpts instead of archive list on the home page
-show_frame: true                # display a grey frame on large screens
-show_sidebar: false             # show a sidebar instead of the usual header
-show_minimal: false             # remove all clutter
-
-#show_frame: "/assets/images/background.svg"
+show_excerpts: false
+show_frame: true
+show_sidebar: false
+show_minimal: false
 
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
@@ -22,9 +20,9 @@ navigation:                     # accepts {file, title, url, icon, sidebaricon}
   - {file: "README.md", sidebaricon: address-card}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
-  - {title: Mail, icon: envelope, url: "mailto:author@example.com"}
-  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
-  - {title: Subscribe, icon: rss, url: "/feed.xml"}
+  - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/colinamcqueen"}
+  - {title: GitHub, icon: github, url: "https://github.com/ArgentEnergy"}
+  - {title: Bugcrowd, icon: bug, url: "https://bugcrowd.com/h/argentenergy"}
 
 comments:
 #  disqus_shortname: ""         # see https://disqus.com
