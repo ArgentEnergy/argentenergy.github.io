@@ -3,12 +3,12 @@ author: "Colin McQueen"
 description: "Vulnerabilities discovered and exploited during my career."
 permalink: /:title/
 lang: "en"
-excerpt_separator: "\n\n\n"
+excerpt_separator: "\n"
 date_format: "%B %d, %Y"
 
 # Layout
 
-show_excerpts: false
+show_excerpts: true
 show_frame: true
 show_sidebar: false
 show_minimal: false
@@ -16,8 +16,7 @@ show_minimal: false
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
-  - {file: "archive.html", sidebaricon: home}
-  - {file: "README.md", sidebaricon: address-card}
+  - {file: "about.html", sidebaricon: home}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/colinamcqueen"}
