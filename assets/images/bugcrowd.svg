@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="bugcrowd-unfilled-icon">
+  <path fill="#515151" d="M18 2H6L0 12l6 10h12l6-10zm-4.91 15.99c-1.12 0-2.13-.53-2.85-1.39v1.19H8.06V8.46c0-.3-.24-.54-.54-.54h-.54v-1.9h1.63c.9 0 1.63.73 1.63 1.63v2.77c.72-.86 1.73-1.39 2.85-1.39 2.17 0 3.94 2.01 3.94 4.48s-1.76 4.48-3.94 4.48zm1.76-4.48a2.3 2.3 0 1 1-4.6 0 2.3 2.3 0 0 1 4.6 0z"/>
+</svg>
