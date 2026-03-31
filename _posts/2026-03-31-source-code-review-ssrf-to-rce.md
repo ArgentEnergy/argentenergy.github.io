@@ -81,4 +81,4 @@ By analyzing the source code and downloaded web server logs from earlier, I iden
    </figure>
 
 ## Remediation
-The recommendations to the client were to restrict this endpoint to authorized internal users only and strengthen input validation to block unnecessary special characters before hostname whitelisting.
+The recommendations to the client were to restrict this endpoint to only authorized internal users and strengthen input validation by rewriting the regular expression to allow only characters valid in a hostname. This ensures that invalid characters like `?` or `#` cannot bypass the domain whitelist.
