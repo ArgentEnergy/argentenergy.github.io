@@ -4,7 +4,7 @@ layout: post
 date:   2026-03-31
 ---
 
-On a recent engagement, a client requested a penetration test on a large-scale web application (~3 GB of source code, scoped for 200 hours). To accelerate vulnerability discovery, the client provided full access to the application's source code.
+On a recent engagement, a client requested a penetration test of a large web application (~3 GB of source code, scoped for 200 hours). While the assessment primarily focused on application-layer testing, the client provided full access to the source code to help validate findings and uncover additional exploit paths.
 
 Having spent several years as a Java developer, I approached this assessment with a strong understanding of common design patterns, frameworks, and typical pitfalls. The source code environment was restricted—no Internet access and no specialized security tooling, only PowerShell and Java IDEs such as IntelliJ.  Despite these constraints, manual review proved highly effective.
 
