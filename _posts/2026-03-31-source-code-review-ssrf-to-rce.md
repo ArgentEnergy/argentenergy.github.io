@@ -28,6 +28,9 @@ To download the web server logs, the application relied on an internal client do
 
 ## Root Cause: Bypassing the Regular Expression
 The application attempted to restrict the `hostname` parameter using a regular expression, allowing only domains owned by the client.
+```
+^(redacted-(us|ap|eu|ca|sa|af|me)-\w+-\d-\w+-\d*-redacted2-[a-z0-9]\.(redacted|redacted2|redacted3)\.com)|(\w+-redacted2-\d+\.redacted4\.com)|(.+\.(redacted5|redacted6)\.com)$
+```
 
 At first glance, this appeared secure. However, the expression only ensured that an approved domain appeared at the end of the input string. Because the preceding portion for subdomains allowed special characters, the restriction could be bypassed by injecting `?` or `#`:
  - `?` converts the allowed domain into a query string (e.g. attacker.com/path?allowed.client-domain.com)
