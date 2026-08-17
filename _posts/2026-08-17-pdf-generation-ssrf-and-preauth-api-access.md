@@ -47,14 +47,14 @@ While performing reconnaissance on the web application, I discovered an unusual 
   <img src="/assets/images/2026/forceful-browsing-1.png">
   <figcaption>Figure 3 – API welcome page under /content/image</figcaption>
 </figure>
-<br /><br />
+<br />
 Since I was already assessing the public API, I recognized which API the welcome page belonged to and reviewed the public API documentation to identify the available endpoints. Although the documentation was publicly accessible, the public API itself required authentication. By using the same documented endpoints under the unauthenticated /content/image/ path, I was able to call the internal API directly and retrieve production data.
 
 <figure>
   <img src="/assets/images/2026/forceful-browsing-2.png">
   <figcaption>Figure 4 – Successfully retrieved property owner and vehicle information</figcaption>
 </figure>
-<br /><br />
+<br />
 This exposure allowed unauthenticated access to sensitive information, including property owner names, phone numbers, home addresses, and vehicle information such as license plate numbers. Because the endpoint was publicly accessible, anyone on the Internet could have accessed this data without authentication.
 
 ## Remediation
