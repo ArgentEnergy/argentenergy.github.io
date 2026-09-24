@@ -63,7 +63,7 @@ With the upload, path traversal, and executable location identified, I was able 
 </figure>
 
 <figure>
-  <img src="/assets/images/2026/rce-file-upload-2.png">
+  <img src="/assets/images/2026/rce-file-upload-3.png">
   <figcaption>Figure 4 – OS command executed to send Windows user information to my remote server</figcaption>
 </figure>
 
