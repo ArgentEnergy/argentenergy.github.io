@@ -6,7 +6,7 @@ layout: default
 <main>
   <header><h1>{{ include.title | default: page.title }}</h1></header>
   <p>
-    With over 12 years of IT experience, I have successfully discovered and reported numerous vulnerabilities for customers and bug bounty programs.
+    With over {{ "now" | date: "%Y" | plus: 0 | minus: 2012 }} years of IT experience, I have successfully discovered and reported numerous vulnerabilities for customers and bug bounty programs.
     
     Author of the following CVEs: CVE-2021-36156 and CVE-2021-36157
   </p>
